@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Resizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Image Resizer</h1>
+
+    <input type="file" id="imageInput" accept="image/*"><br>
+
+    <div class="resize-controls">
+      <label>Width: <input type="number" id="width"></label>
+      <label>Height: <input type="number" id="height"></label>
+      <label>
+        <input type="checkbox" id="aspectRatio"> Maintain Aspect Ratio
+      </label>
+    </div>
+
+    <div class="extra-controls">
+      <label>Download Format:
+        <select id="format">
+          <option value="image/png">PNG</option>
+          <option value="image/jpeg">JPG</option>
+          <option value="image/webp">WEBP</option>
+        </select>
+      </label>
+    </div>
+
+    <button onclick="resizeImage()">Resize Image</button>
+    <button onclick="resetAll()">Reset</button>
+
+    <img id="outputImage" src="" alt="Resized Image">
+    <a id="downloadLink" download="resized-image.png">Download Resized Image</a>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
